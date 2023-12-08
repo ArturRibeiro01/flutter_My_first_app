@@ -30,18 +30,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   bool _showMyName = true;
 
   void _updateScreen() {
     _showMyName = !_showMyName;
+    setState(() {});
   }
 
   @override
@@ -65,11 +58,11 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: _incrementCounter,
-      //   tooltip: 'Adicionar mais um número',
-      //   child: const Icon(Icons.add),
-      // ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _updateScreen,
+        tooltip: 'Adicionar mais um número',
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
